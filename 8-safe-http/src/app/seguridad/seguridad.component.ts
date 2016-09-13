@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { SeguridadService } from './seguridad.service';
 
 @Component({
-  moduleId: module.id,
   selector: 'seguridad',
   templateUrl: 'seguridad.component.html'
 })

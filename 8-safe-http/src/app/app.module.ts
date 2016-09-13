@@ -49,7 +49,7 @@ const routerModule = RouterModule.forRoot(routes);
  */
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HomeModule, AcercaDeModule, SaludoModule, routerModule, SeguridadModule, HttpModule],
+  imports: [BrowserModule, HomeModule, AcercaDeModule, SaludoModule, routerModule, SeguridadModule,  HttpModule],
   providers :[HttpToolsService],
   bootstrap   : [AppComponent]
 })
