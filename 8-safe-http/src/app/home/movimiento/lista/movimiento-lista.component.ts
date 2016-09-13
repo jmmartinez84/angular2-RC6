@@ -38,11 +38,7 @@ export class MovimientoListaComponent implements OnInit, OnChanges {
     // Los observables emiten eventos a los que hay que suscribirse
     this.movimientosService.leerMovimientos()
       .subscribe(res => {
-        // durante la suscripción se obtienen y transforman los datos
-        if (res.status == 200)
-          this.movimientos = res.json() || [];
-        else
-          console.error(JSON.stringify(res));
+        this.movimientos = res || [];
       })
   }
 }

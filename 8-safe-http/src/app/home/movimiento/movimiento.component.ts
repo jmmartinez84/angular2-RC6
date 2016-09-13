@@ -36,11 +36,7 @@ export class MovimientoComponent implements OnInit {
   leerTotales() {
     this.movimientosService.leerTotales()
       .subscribe(res => {
-        // durante la suscripción se obtienen y transforman los datos
-        if (res.status == 200)
-          this.totales = res.json() || []
-        else
-          console.error(JSON.stringify(res));
+        this.totales = res || [];
       })
   }
 }

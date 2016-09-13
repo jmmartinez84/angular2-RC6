@@ -23,7 +23,7 @@ export class MovimientoEditorComponent implements OnInit {
     this.movimientosService
       .leerMaestros()
       .subscribe(res => {
-        this.maestros = res.json();
+        this.maestros = res;
       })
     this.movimiento = this.nuevoMovimiento();
     this.activatedRoute.params.subscribe(parametros => {
@@ -33,12 +33,7 @@ export class MovimientoEditorComponent implements OnInit {
         this.movimientosService
           .leerMovimientoPor_Id(movimientoId) // la llamda devuelve un observable al que debemos subscribirnos
           .subscribe(response => {
-            // función tipo callback cuando vengan resultados
-            if (response.status == 200) {
-              this.movimiento = response.json() || this.nuevoMovimiento();
-            }
-            else
-              console.error(JSON.stringify(response));
+            this.movimiento = response || this.nuevoMovimiento();
           })
       }
     });

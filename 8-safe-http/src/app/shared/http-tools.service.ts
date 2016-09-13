@@ -18,11 +18,9 @@ export class HttpToolsService {
 
   private static _router: Router
   private static _token: any
-  
-  constructor(
-    private router: Router
-  ) {
-    HttpToolsService._router=this.router
+
+  constructor(private router: Router) {
+    HttpToolsService._router = this.router
   }
 
   /**
@@ -39,17 +37,17 @@ export class HttpToolsService {
     return options
   }
 
- 
+
   /**
    * función para obtener los datos json de la respuesta http  
    */
-  obtenerDatos(response) { 
-      let datos: any = null;
-      if (response.status < 400)
-        datos = response.json();
-      return datos; 
-    }
-  
+  obtenerDatos(response) {
+    let datos: any = null;
+    if (response.status < 400)
+      datos = response.json();
+    return datos;
+  }
+
   /**
    * Función para el tratamiento de errores
    */
@@ -63,7 +61,7 @@ export class HttpToolsService {
     }
     // continuar con la cadena de subscripciones
     return Observable.throw(error._body)
-  } 
+  }
 
   /**
    * función para usar despues de obtener credenciales 
@@ -72,7 +70,7 @@ export class HttpToolsService {
     console.log('Guardando token en memoria: ' + token);
     HttpToolsService._token = token
     // ir a la página principal
-    HttpToolsService._router.navigate([''])
+    HttpToolsService._router.navigate(['home'])
     return token
   }
 }

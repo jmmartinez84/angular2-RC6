@@ -15,6 +15,7 @@ var seguridad = {
 function usarSeguridad(app, ruta) {
 	app.use(ruta, function (req, res, next) {
 		var sessionId = req.get('sessionId');
+		console.log('sessionId recibida:' + JSON.stringify(sessionId));
 		var sesion = getSesion(sessionId);
 		if (sesion) {
 			if (esSesionValida(sesion)) {
