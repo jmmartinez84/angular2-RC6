@@ -3,7 +3,7 @@ import { SeguridadService } from './seguridad.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'cf-seguridad',
+  selector: 'seguridad',
   templateUrl: 'seguridad.component.html'
 })
 export class SeguridadComponent implements OnInit {

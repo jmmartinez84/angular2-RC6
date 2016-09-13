@@ -3,7 +3,10 @@ import {BrowserModule} from "@angular/platform-browser";
 
 
 import { RouterModule, Routes} from '@angular/router';
-
+/** 
+ * importación del módulo de comunicaciones... desde más arriba
+ * */
+import {HttpModule} from "@angular/http";
 import {AppComponent} from "./app.component";
 
 import {HomeModule} from "./home/home.module"
@@ -46,7 +49,7 @@ const routerModule = RouterModule.forRoot(routes);
  */
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, HomeModule, AcercaDeModule, SaludoModule, routerModule],
+  imports: [BrowserModule, HomeModule, AcercaDeModule, SaludoModule, routerModule, SeguridadModule, HttpModule],
   providers :[HttpToolsService],
   bootstrap   : [AppComponent]
 })
