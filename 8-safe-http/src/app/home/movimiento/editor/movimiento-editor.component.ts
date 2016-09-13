@@ -23,7 +23,7 @@ export class MovimientoEditorComponent implements OnInit {
     this.movimientosService
       .leerMaestros()
       .subscribe(res => {
-        this.maestros = res;
+        this.maestros = res.json();
       })
     this.movimiento = this.nuevoMovimiento();
     this.activatedRoute.params.subscribe(parametros => {

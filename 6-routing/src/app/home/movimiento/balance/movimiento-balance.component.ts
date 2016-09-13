@@ -6,7 +6,6 @@ import { MovimientoModel } from '../shared/movimiento.model';
   templateUrl: 'movimiento-balance.component.html'
 })
 export class MovimientoBalanceComponent implements OnInit {
- // los decoradores para declarar propiedades no siempre requieren parámetros
   @Input('ingresos') ingresos: number
   @Input() gastos: number
 

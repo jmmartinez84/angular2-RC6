@@ -6,17 +6,11 @@ import { MovimientoModel } from '../shared/movimiento.model';
 @Component({
   selector: 'movimiento-lista',
   templateUrl: 'movimiento-lista.component.html',
-  // OJO
-  // Se deben heredar las css
   styleUrls: ['movimiento-lista.component.css','../movimiento.component.css'] 
 })
 export class MovimientoListaComponent implements OnInit {
   sentidoOrden: number = 1
   constructor(private movimientosService: MovimientosService) { }
-  // para comunicarse con el componente contenedor padre se usan eventos
-  // Estos, se decoran con la funcion Output 
-  // El contenedor se suscribe con ('seleccionarMovimiento')
-  // Los eventos envían argumentos, en este caso el movimiento seleccionado
   @Output() seleccionarMovimiento: EventEmitter<MovimientoModel> = new EventEmitter()
   
   ngOnInit() {

@@ -1,13 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
-
 import { MovimientosService } from './shared/movimientos.service'
 import { MovimientoModel } from './shared/movimiento.model'
-
-import {MovimientoEditorComponent} from './editor/movimiento-editor.component'
-import {MovimientoListaComponent} from './lista/movimiento-lista.component'
-import {MovimientoBalanceComponent} from './balance/movimiento-balance.component'
-
 
 @Component({
   selector: 'movimiento',

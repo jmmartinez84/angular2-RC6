@@ -7,12 +7,12 @@
 import {NgModule} from '@angular/core'
 import {BrowserModule} from "@angular/platform-browser";
 
-
+/**
+ * servicios en la librería rouoter
+ */
 import { RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from "./app.component";
-
-import {HttpToolsService} from "./shared/http-tools.service"
 
 /**
  * Modulos de funcionalidad
@@ -45,8 +45,7 @@ const routerModule = RouterModule.forRoot(routes) // <-- routes
 @NgModule({
   declarations: [AppComponent],
   imports     : [BrowserModule, HomeModule, AcercaDeModule, SaludoModule ,routerModule],
-  bootstrap: [AppComponent],
-  providers:[HttpToolsService]
+  bootstrap   : [AppComponent]
 })
 export class AppModule {
 

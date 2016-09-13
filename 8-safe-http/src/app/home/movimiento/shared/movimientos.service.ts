@@ -9,13 +9,8 @@ import { Http, Response, RequestOptions, Headers } from '@angular/http';
 
 // Importar la clase Observable de la librería Reactive Extensions
 import { Observable }     from 'rxjs/Observable';
-// importación de operadores de las reactive extensions
-import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/catch'
 
 import { MovimientoModel } from './movimiento.model'
-
-import {HttpToolsService} from "../../../shared/http-tools.service"
 
 @Injectable()
 export class MovimientosService {
@@ -26,14 +21,14 @@ export class MovimientosService {
 
   // Reclamar la dependencia sobre http  
   // Se registra en la raíz, pues se le supone un uso común a varios objetos
-  constructor(private http: Http, private httpToolsService:HttpToolsService) {
+  constructor(private http: Http) {
   }
 
   // Se devuelven Observables de tipos concretos   
   leerMaestros(): Observable<Response> {
     // las llamadas devuelven observables
     // ocultan la definción de la ruta y demás
-    return this.http.get(`${this.urlBase}/maestros`).map(this.httpToolsService.obtenerDatos)
+    return this.http.get(`${this.urlBase}/maestros`)
   }
   
   guardarMovimiento(movimiento): Observable<Response> {

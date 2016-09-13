@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// importar clases o interfaces
+
 import { MovimientosService } from './shared/movimientos.service'
 import { MovimientoModel } from './shared/movimiento.model'
 
@@ -9,7 +9,6 @@ import { MovimientoModel } from './shared/movimiento.model'
   styleUrls: ['movimiento.component.css']
 })
 export class MovimientoComponent implements OnInit {
-   // el componente principal cada vez tiene menor contenido lógico
 
   movimientoSeleccionado = null // para comunicar los subcomponentes  
   
@@ -22,8 +21,6 @@ export class MovimientoComponent implements OnInit {
   }
 
   alSeleccionarMovimiento(movimiento: MovimientoModel) {
-    // este método se invoca cuando alguien selecciona un movimiento desde el subcomponente lista
-    // el movimiento seleccionado se envía hacia el subcomponente de edición
     this.movimientoSeleccionado = movimiento
   }
 }
