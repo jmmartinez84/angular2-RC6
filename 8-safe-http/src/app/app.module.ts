@@ -1,50 +1,53 @@
-/**
- * Módulo ráiz de la aplicación
- * Importa al resto de módulos
- * configura este módulo y sus dependencias
- */
-
 import {NgModule} from '@angular/core'
 import {BrowserModule} from "@angular/platform-browser";
 
-/**
- * servicios en la librería rouoter
- */
+
 import { RouterModule, Routes} from '@angular/router';
 
 import {AppComponent} from "./app.component";
 
-/**
- * Modulos de funcionalidad
- * asimilables a páginas o segmentos de url
-*/
 import {HomeModule} from "./home/home.module"
 import {AcercaDeModule} from "./acerca-de/acerca-de.module"
 import {SaludoModule} from "./saludo/saludo.module"
+
 /**
- * Componentes que se visualizarán en cada ruta
+ * nuevo módulo de seguridad
  */
+import {SeguridadModule} from "./seguridad/seguridad.module"
+
 import {MovimientoComponent} from "./home/movimiento/movimiento.component"
 import {AcercaDeComponent} from "./acerca-de/acerca-de.component"
 import {SaludoComponent} from "./saludo/saludo.component"
 import {MovimientoEditorComponent} from "./home/movimiento/editor/movimiento-editor.component"
+/**
+ * nuevo componente de seguridad
+ */
+import {SeguridadComponent} from './seguridad/seguridad.component'
 
-/** Se necesitan para montar las rutas */
+/**
+ * Importación del servicio de utilidad
+ */
+import {HttpToolsService } from  "./shared/http-tools.service";
+
 const routes: Routes = [
-  { path: '', redirectTo: 'home', pathMatch: 'full' },//ruta base
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: MovimientoComponent },
   { path: 'acerca-de', component: AcercaDeComponent },
-  { path: 'about', redirectTo: 'acerca-de' }, //redirecciones
+  { path: 'about', redirectTo: 'acerca-de' }, 
   { path: 'saludo', component: SaludoComponent },
-  { path: 'saludo/:amigo', component: SaludoComponent },//parametros
+  { path: 'saludo/:amigo', component: SaludoComponent },
   { path: 'movimientos/:id', component: MovimientoEditorComponent },
+  { path: 'seguridad', component: SeguridadComponent }// ruta para la página de login
  ];
-/** en el módulo principal se registra un módulo especial */
-const routerModule = RouterModule.forRoot(routes) // <-- routes
 
+const routerModule = RouterModule.forRoot(routes);
+/**
+ * registro como provider del servicio de utilidad 
+ */
 @NgModule({
   declarations: [AppComponent],
-  imports     : [BrowserModule, HomeModule, AcercaDeModule, SaludoModule ,routerModule],
+  imports: [BrowserModule, HomeModule, AcercaDeModule, SaludoModule, routerModule],
+  providers :[HttpToolsService],
   bootstrap   : [AppComponent]
 })
 export class AppModule {

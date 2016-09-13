@@ -76,16 +76,5 @@ export class MovimientosService {
       .catch(this.httpToolsService.tratarErrores)
   }
 
-  // TODO: Llevar a su propio servicio 
-  registrar(credenciales) {
-    // la llamda de seguridad debería devolvernos credenciales
-    // parte de nuestra labor será guardarla para futuros usos
-    let body = JSON.stringify(credenciales)
-    let options = this.httpToolsService.configurarCabeceras()
-    return this.http
-        .post(`${this.urlBase}/pub/usuarios`, body, options)
-        .map(this.httpToolsService.obtenerDatos)
-        .map(this.httpToolsService.guardarCredenciales)
-        .catch(this.httpToolsService.tratarErrores)
-  }
+  
 }
