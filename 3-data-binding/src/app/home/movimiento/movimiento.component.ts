@@ -30,6 +30,17 @@ export class MovimientoComponent implements OnInit {
     }
   }
 
+  cambiarTipo(nuevoTipo:string){
+    if(nuevoTipo==="Ingreso"){
+      this.movimiento.tipo = "Ingreso";
+      this.movimiento.categoria = "Nómina";
+    }
+    else{
+      this.movimiento.tipo = "Gasto";
+      this.movimiento.categoria = "Hipoteca";
+    }
+  }
+
   /** métodos con funcionalidad para el modelo de la vista  */
   guardarMovimiento() {
     if (this.movimiento.tipo === 'Ingreso')

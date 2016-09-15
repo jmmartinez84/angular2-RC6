@@ -3,8 +3,8 @@
     <label for="tipo">Tipo:</label>
     <!--[] para propiedades del modelo a la vista-->
     <!--() para eventos de la vista al modelo-->
-    <input type="radio" [checked]="movimiento.tipo == 'Ingreso'" (change)="movimiento.tipo='Ingreso'" /> Ingreso
-    <input type="radio" [checked]="movimiento.tipo == 'Gasto'" (change)="movimiento.tipo='Gasto'" /> Gasto
+    <input type="radio" [checked]="movimiento.tipo == 'Ingreso'" (change)="cambiarTipo('Ingreso')" /> Ingreso
+    <input type="radio" [checked]="movimiento.tipo == 'Gasto'" (change)="cambiarTipo('Gasto')" /> Gasto
   </div>
   <p></p>
   <div>
