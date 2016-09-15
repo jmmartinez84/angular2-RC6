@@ -9,7 +9,7 @@ export class SeguridadComponent implements OnInit {
     
     usuario:any = { email:'', password:''}
 
-    constructor(private movimientosService: SeguridadService){
+    constructor(private seguridadService: SeguridadService){
 
     }
 
@@ -19,7 +19,7 @@ export class SeguridadComponent implements OnInit {
 
     registrarUsuario(){
         console.log('Enviando credenciales');
-        this.movimientosService
+        this.seguridadService
             .registrar(this.usuario)
             .subscribe(r=>{console.log(r);})
     }

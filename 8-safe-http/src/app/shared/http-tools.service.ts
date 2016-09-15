@@ -41,7 +41,7 @@ export class HttpToolsService {
   /**
    * función para obtener los datos json de la respuesta http  
    */
-  obtenerDatos(response) {
+  obtenerDatos(response: Response) {
     let datos: any = null;
     if (response.status < 400)
       datos = response.json();
@@ -51,7 +51,7 @@ export class HttpToolsService {
   /**
    * Función para el tratamiento de errores
    */
-  tratarErrores(error) {
+  tratarErrores(error: Response) {
     if (error.status == 401) {
       console.warn("Error de permisos");
       HttpToolsService._router.navigate(['seguridad'])
